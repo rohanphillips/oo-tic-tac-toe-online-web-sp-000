@@ -164,19 +164,19 @@ class TicTacToe
     result = won?
     isarray = result.class == Array
     fullboard = full?
-    if result == false && fullboard == true 
+    if result == false && fullboard == true
       #board is full and no winner
-      return true 
-    elsif result 
+      return true
+    elsif result
       #there was a winner, therefore no draw
       return false
-    elsif result == false && fullboard == false 
+    elsif result == false && fullboard == false
       #game is still in progress
       return false
     else
         #any other result would suggest a draw
         return true
-    end    
+    end
   end
 
 end
