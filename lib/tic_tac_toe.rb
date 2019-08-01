@@ -95,8 +95,8 @@ class TicTacToe
 
   def won?
     result = winner
-    if result == nil 
-      return false  
+    if result == nil
+      return false
     end
     return WIN_COMBINATIONS[@winningcombo]
   end
