@@ -2,4 +2,4 @@
 require 'pry'
 require_relative '../lib/tic_tac_toe.rb'
 
-myGame = TicTacToe.New
+myGame = TicTacToe
