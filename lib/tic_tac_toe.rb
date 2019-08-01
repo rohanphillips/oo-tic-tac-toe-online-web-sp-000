@@ -62,7 +62,7 @@ class TicTacToe
     xcount = 0
     ocount = 0
     currentplayer = "X"
-    if turn_count(@board) < 10
+    if turn_count() < 10
       @board.each do |n|
         if n == "X"
           xcount += 1
