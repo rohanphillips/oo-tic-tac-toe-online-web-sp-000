@@ -1,5 +1,6 @@
 class TicTacToe
   @board = []
+  @winningcombo = -1
   WIN_COMBINATIONS = [
   [0,1,2],
   [3,4,5],
@@ -90,6 +91,14 @@ class TicTacToe
     end
    end
    display_board
+  end
+
+  def won?
+    result = winner
+    if result == nil 
+      return false  
+    end
+    return WIN_COMBINATIONS[@winningcombo]
   end
 
 end
