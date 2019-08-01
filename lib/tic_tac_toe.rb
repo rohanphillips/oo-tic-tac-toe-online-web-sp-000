@@ -25,4 +25,9 @@ class TicTacToe
     userinput = i.strip
     input = userinput.to_i - 1
   end
+
+  def move(index, player)
+    @board[index] = player
+  end
+
 end
