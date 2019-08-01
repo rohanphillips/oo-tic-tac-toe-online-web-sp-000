@@ -183,4 +183,27 @@ class TicTacToe
     return draw? == true || won? != false || full? == true
   end
 
+  def play
+    isover = over?
+    if isover == false
+      puts "Welcome to Tic Tac Toe!"
+      display_board
+      while isover == false
+        puts "It's player #{current_player}'s turn"
+        turn
+        result = won?
+        isover = over?
+      end
+    end
+
+    if isover
+      result = won?
+      if result
+        puts "Congratulations #{winner}!"
+      end
+      if draw? == true
+        puts "Cat's Game!"
+      end
+    end
+  end
 end
