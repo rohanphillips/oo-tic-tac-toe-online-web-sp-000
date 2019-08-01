@@ -47,15 +47,34 @@ class TicTacToe
   end
 
   def turn_count()
-    i = 0
-    turncount = 0
+    i = 0 
+    turncount = 0 
     while i < @board.length
       if @board[i] != " "
-        turncount += 1
+        turncount += 1 
       end
       i += 1
     end
     return turncount
   end
 
+  def current_player()
+    xcount = 0 
+    ocount = 0 
+    currentplayer = "X"
+    if turn_count(@board) < 10
+      @board.each do |n|
+        if n == "X"
+          xcount += 1 
+        elsif n == "O"
+          ocount += 1 
+        end
+      end
+      if xcount > ocount
+        currentplayer = "O"
+      end 
+    end
+    return currentplayer
+  end
+  
 end
