@@ -180,7 +180,7 @@ class TicTacToe
   end
 
   def over?
-    return draw? == true || won? != false || full? == true 
+    return draw? == true || won? != false || full? == true
   end
 
 end
