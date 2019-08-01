@@ -101,4 +101,51 @@ class TicTacToe
     return WIN_COMBINATIONS[@winningcombo]
   end
 
+  def winner()
+    winnerfound = false 
+    PLAYERS.each do |i|
+      if iswinner(i) == i 
+        return i 
+        winnerfound = true
+        break
+      end
+    end
+    if winnerfound == false
+      return nil  
+    end
+  end
+
+  def iswinner(player)
+    winfound = false 
+    complete = false
+    combo = []
+    combinationcounter = 0
+     
+    until complete == true 
+      while combinationcounter < WIN_COMBINATIONS.length 
+        combo = WIN_COMBINATIONS[combinationcounter]
+        combocounter = 0
+        playercounter = 0
+        while combocounter < combo.length
+         boardcontent = @board[combo[combocounter]]
+          if boardcontent == player
+            playercounter += 1  
+          end 
+          combocounter += 1
+        end
+        if playercounter == 3
+          winfound = true 
+          complete = true
+          @winningcombo = combinationcounter
+          break
+        end
+        combinationcounter += 1
+      end
+      complete = true 
+    end
+    if winfound == true 
+      return player  
+    end
+  end
+
 end
