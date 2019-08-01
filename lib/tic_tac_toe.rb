@@ -77,4 +77,19 @@ class TicTacToe
     return currentplayer
   end
 
+  def turn()
+   valid = false
+   while valid == false
+    puts "Please enter 1-9:"
+    mymove = input_to_index(gets.strip)
+    if valid_move?(mymove)
+      if position_taken?(mymove) == false
+        move(mymove, current_player)
+        valid = true
+      end
+    end
+   end
+   display_board
+  end
+
 end
