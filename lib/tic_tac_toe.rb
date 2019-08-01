@@ -150,11 +150,11 @@ class TicTacToe
   end
 
   def full?()
-    isfull = true 
+    isfull = true
     @board.each do |location|
       if location == " "
-        isfull = false 
-        break 
+        isfull = false
+        break
       end
     end
     return isfull
