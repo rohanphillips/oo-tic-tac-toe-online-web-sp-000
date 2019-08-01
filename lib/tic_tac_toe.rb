@@ -46,4 +46,16 @@ class TicTacToe
     end
   end
 
+  def turn_count()
+    i = 0
+    turncount = 0
+    while i < @board.length
+      if @board[i] != " "
+        turncount += 1
+      end
+      i += 1
+    end
+    return turncount
+  end
+
 end
